@@ -26,5 +26,7 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 
 ## Status 
 
+As of now, the project planning has been completed and approved by our Eleven Fifty Instructor. We will begin building on Monday, November 23, 2020. 
+
 ## Contact
 Created by @evan-lacy @sedutiel and @carltgoss 
