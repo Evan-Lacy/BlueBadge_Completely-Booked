@@ -14,6 +14,7 @@ Status
 Contact
 
 # Technologies 
+This API is written in C#, an object-oriented programming language from Microsoft designed to work with their .Net platform.
 
 # Setup
 
