@@ -15,7 +15,7 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 
 ## Technologies 
 
-* Console App C# .NET Framework - version 4.7.2
+* Web API - Empty - C# .NET Framework - version 4.7.2
 * Class Library C# .NET Framework - version 4.7.2
 
 ## Setup
