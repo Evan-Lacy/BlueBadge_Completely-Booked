@@ -12,11 +12,13 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 * [Status](#status)
 * [Contact](#contact)
 
-# Technologies 
+## Screenshots 
+
+## Technologies 
 This API is written in C#, an object-oriented programming language from Microsoft designed to work with their .Net platform.
 
-# Setup
+## Setup
 
-# Status 
+## Status 
 
-# Contact
+## Contact
