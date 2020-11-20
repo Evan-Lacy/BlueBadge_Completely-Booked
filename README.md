@@ -13,6 +13,8 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 
 ## Screenshots 
 
+![image](https://user-images.githubusercontent.com/72028079/99829172-efb1ea00-2b29-11eb-8d15-e0fe3d79a31f.png)
+
 ## Technologies 
 
 * Web API - Empty - C# .NET Framework - version 4.7.2
