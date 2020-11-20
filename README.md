@@ -14,7 +14,9 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 ## Screenshots 
 
 ## Technologies 
-This API is written in C#, an object-oriented programming language from Microsoft designed to work with their .Net platform.
+
+* Console App C# .NET Framework - version 4.7.2
+* Class Library C# .NET Framework - version 4.7.2
 
 ## Setup
 
