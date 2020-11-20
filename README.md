@@ -28,6 +28,8 @@ Feel free to clone and explore the application! You can clone this project or si
 
 Use Git or checkout with SVN using the web URL:
 
+https://github.com/Evan-Lacy/BlueBadge_Completely-Booked.git
+
 
 ## Status 
 
