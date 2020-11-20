@@ -24,6 +24,11 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 
 ## Setup
 
+Feel free to clone and explore the application! You can clone this project or simply use your command prompt/terminal to navigate to the folder you wish to house the program and enter the line below.
+
+Use Git or checkout with SVN using the web URL:
+
+
 ## Status 
 
 As of now, the project planning has been completed and approved by our Eleven Fifty Instructor. We will begin building on Monday, November 23, 2020. 
