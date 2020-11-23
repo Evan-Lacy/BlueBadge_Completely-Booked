@@ -55,10 +55,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublisherCreate.cs" />
+    <Compile Include="PublisherDetail.cs" />
+    <Compile Include="PublisherEdit.cs" />
+    <Compile Include="PublisherListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompletelyBooked.Data\CompletelyBooked.Data.csproj">
+      <Project>{5EE37012-7523-4F7D-A587-8B1499498F8B}</Project>
+      <Name>CompletelyBooked.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
