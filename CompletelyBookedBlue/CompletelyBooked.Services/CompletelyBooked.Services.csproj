@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompletelyBooked.Data\CompletelyBooked.Data.csproj">
+      <Project>{5EE37012-7523-4F7D-A587-8B1499498F8B}</Project>
+      <Name>CompletelyBooked.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompletelyBooked.Models\CompletelyBooked.Models.csproj">
+      <Project>{1AD897E7-B5D5-4D88-9B0C-BB1DC57286F3}</Project>
+      <Name>CompletelyBooked.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
