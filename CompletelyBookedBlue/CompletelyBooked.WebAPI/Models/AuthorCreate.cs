@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace CompletelyBooked.Data
+namespace CompletelyBooked.WebAPI.Models
 {
-    public class Author
+    public class AuthorCreate
     {
         [Key]
         public string Name { get; set; }
@@ -19,5 +18,4 @@ namespace CompletelyBooked.Data
         public string About { get; set; }
 
     }
-
 }
