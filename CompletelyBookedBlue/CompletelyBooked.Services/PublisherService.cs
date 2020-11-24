@@ -42,7 +42,7 @@ namespace CompletelyBooked.Services
                         Location = e.Location,
                         YearCreated = e.YearFounded,
                         BestSellerCount = e.BestSellerCount,
-                        //BooksPublished = e.BooksPublished
+                        BooksPublished = e.BooksPublished
                     });
                 return query.ToArray();
             }
