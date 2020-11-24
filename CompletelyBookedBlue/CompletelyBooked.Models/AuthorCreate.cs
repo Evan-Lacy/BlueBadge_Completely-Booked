@@ -2,23 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace CompletelyBooked.Data
+namespace CompletelyBooked.WebAPI.Models
 {
-    public class Author
+    public class AuthorCreate
     {
         [Key]
-        public int PublisherId { get; set; }
         public string Name { get; set; }
         [Required]
-        public int Birthday { get; set; }
+        public string Birthday { get; set; }
         [Required]
         public string Birthplace { get; set; }
         [Required]
         public string About { get; set; }
 
     }
-
 }
