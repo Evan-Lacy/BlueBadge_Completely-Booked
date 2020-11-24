@@ -14,6 +14,6 @@ namespace CompletelyBooked.Models
         public string Location { get; set; }
         public int YearFounded { get; set; }
         public int BestSellerCount { get; set; }
-        public virtual List<Book> BooksPublished { get; set; }
+        public virtual List<BookListItem> BooksPublished { get; set; }
     }
 }

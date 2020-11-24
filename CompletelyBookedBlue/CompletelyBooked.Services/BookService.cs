@@ -23,7 +23,7 @@ namespace CompletelyBooked.Services
             {
                 Title = model.Title,
                 Author = model.Author,
-                Publisher = model.Publisher,
+                BookPublisher = model.BookPublisher,
                 Group = model.Group,
                 Genre = model.Genre,
                 Description = model.Description,
@@ -72,7 +72,7 @@ namespace CompletelyBooked.Services
                         BookId = entity.BookId,
                         Title = entity.Title,
                         Author = entity.Author,
-                        Publisher = entity.Publisher,
+                        BookPublisher = entity.BookPublisher,
                         Group = entity.Group,
                         Genre = entity.Genre,
                         Description = entity.Description,
@@ -97,7 +97,7 @@ namespace CompletelyBooked.Services
                         BookId = entity.BookId,
                         Title = entity.Title,
                         Author = entity.Author,
-                        Publisher = entity.Publisher,
+                        BookPublisher = entity.BookPublisher,
                         Group = entity.Group,
                         Genre = entity.Genre,
                         Description = entity.Description,
@@ -164,7 +164,7 @@ namespace CompletelyBooked.Services
                         BookId = entity.BookId,
                         Title = entity.Title,
                         Author = entity.Author,
-                        Publisher = entity.Publisher,
+                        BookPublisher = entity.BookPublisher,
                         Group = entity.Group,
                         Genre = entity.Genre,
                         Description = entity.Description,
@@ -186,7 +186,7 @@ namespace CompletelyBooked.Services
 
                 entity.Title = model.Title;
                 entity.Author = model.Author;
-                entity.Publisher = model.Publisher;
+                entity.BookPublisher = model.BookPublisher;
                 entity.Group = model.Group;
                 entity.Genre = model.Genre;
                 entity.Description = model.Description;
