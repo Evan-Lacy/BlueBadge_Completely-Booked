@@ -11,7 +11,7 @@ namespace CompletelyBooked.WebAPI.Models
         [Key]
         public string Name { get; set; }
         [Required]
-        public string Birthday { get; set; }
+        public DateTime Birthday { get; set; }
         [Required]
         public string Birthplace { get; set; }
         [Required]

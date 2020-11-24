@@ -26,7 +26,7 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(authors);
         }
 
-        public IHttpActionResult Get(int name)
+        public IHttpActionResult Get(string name)
         {
             AuthorService authorService = CreateAuthorService();
             var author = authorService.GetAuthorByName(name);

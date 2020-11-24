@@ -1,5 +1,6 @@
 ﻿using CompletelyBooked.Data;
 using CompletelyBooked.Models;
+using CompletelyBooked.WebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,10 @@ namespace CompletelyBooked.Services
         {
             var entity = new Author()
             {
-                Name = model.AuthorName,
-                Birthday = model.AuthorBirthday,
-                Birthplace = model.AuthorBirtplace,
-                About = model.AuthorAbout,
+                Name = model.Name,
+                Birthday = model.Birthday,
+                Birthplace = model.Birthplace,
+                About = model.About,
  
             };
 
@@ -40,28 +41,28 @@ namespace CompletelyBooked.Services
                     .Select
                     (e => new AuthorListItem
                     {
-                        AuthorName = e.Name,
-                        AuhtorBirthday = e.Birthday,
-                        AuthorBirthplace = e.Birthplace,
-                        AuhtorAbout = e.About
+                        Name = e.Name,
+                        Birthday = e.Birthday,
+                        Birthplace = e.Birthplace,
+                        About = e.About
                     }
                     );
                 return query.ToArray();
             }
         }
 
-        public AuthorDetail GetAuthorByName(int name)
+        public AuthorDetail GetAuthorByName(string name)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                ctx.Authors.Single(e => e.Name == _name);
+                ctx.Authors.Single(e => e.Name == name);
                 return new AuthorDetail
                 {
-                    AuthorName = entity.Name,
-                    AuthorBirthday = entity.Birthday,
-                    AuthorBirthplace = entity.Birthplace,
-                    AuthorAbout = entity.About,
+                    Name = entity.Name,
+                    Birthday = entity.Birthday,
+                    Birthplace = entity.Birthplace,
+                    About = entity.About,
                 };
             }
         }
