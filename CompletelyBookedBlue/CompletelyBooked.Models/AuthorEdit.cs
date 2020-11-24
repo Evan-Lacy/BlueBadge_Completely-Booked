@@ -8,6 +8,7 @@ namespace CompletelyBooked.Models
 {
     class AuthorEdit
     {
+        public int AuthorId { get; set; }
         public string Name { get; set; }
         public string Birthday { get; set; }
         public string Birthplace { get; set; }

@@ -7,6 +7,7 @@ namespace CompletelyBooked.WebAPI.Models
 {
     public class AuthorListItem
     {
+        public int AuthorId { get; set; }
         public int AuthorName { get; set; }
         public string AuthorBirthday { get; set; }
         public string AuthorBirthplace { get; set; }

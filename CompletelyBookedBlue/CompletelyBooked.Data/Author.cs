@@ -10,9 +10,10 @@ namespace CompletelyBooked.Data
     public class Author
     {
         [Key]
+        public int PublisherId { get; set; }
         public string Name { get; set; }
         [Required]
-        public string Birthday { get; set; }
+        public int Birthday { get; set; }
         [Required]
         public string Birthplace { get; set; }
         [Required]
