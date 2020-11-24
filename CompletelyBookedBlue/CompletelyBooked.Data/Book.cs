@@ -27,6 +27,8 @@ namespace CompletelyBooked.Data
         public bool IsBestSeller { get; set; }
         public string ISBN { get; set; }
 
+
+
     }
     public enum Genre
     {

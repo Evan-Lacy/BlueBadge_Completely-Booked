@@ -12,7 +12,7 @@ namespace CompletelyBooked.Models
         public int PublisherId { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
-        public int YearCreated { get; set; }
+        public int YearFounded { get; set; }
         public int BestSellerCount { get; set; }
         public virtual List<Book> BooksPublished { get; set; }
     }

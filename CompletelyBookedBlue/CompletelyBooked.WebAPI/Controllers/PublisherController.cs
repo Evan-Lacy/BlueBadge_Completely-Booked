@@ -11,7 +11,7 @@ namespace CompletelyBooked.WebAPI.Controllers
 {
     public class PublisherController : ApiController
     {
-        public PublisherService CreatePublisherService()
+        private PublisherService CreatePublisherService()
         {
             var pubService = new PublisherService();
             return pubService;

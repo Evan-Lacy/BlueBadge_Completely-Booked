@@ -87,6 +87,15 @@
     <Compile Include="Author.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202011231927550_InitialCreate.cs" />
+    <Compile Include="Migrations\202011231927550_InitialCreate.Designer.cs">
+      <DependentUpon>202011231927550_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011241841158_added-migrations.cs" />
+    <Compile Include="Migrations\202011241841158_added-migrations.Designer.cs">
+      <DependentUpon>202011241841158_added-migrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publisher.cs" />
     <Compile Include="Review.cs" />
@@ -94,6 +103,14 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202011231927550_InitialCreate.resx">
+      <DependentUpon>202011231927550_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011241841158_added-migrations.resx">
+      <DependentUpon>202011241841158_added-migrations.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
