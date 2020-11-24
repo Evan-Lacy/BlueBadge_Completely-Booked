@@ -42,8 +42,13 @@ namespace CompletelyBooked.Services
                         Location = e.Location,
                         YearFounded = e.YearFounded,
                         BestSellerCount = e.BestSellerCount,
-                        BooksPublished = e.BooksPublished
-                    });
+                        BooksPublished = e.BooksPublished.Select(b => new BookListItem
+                        {
+                            BookId = b.BookId,
+                            Author = b.Author,
+                            Title = b.Title
+                        }).ToList()
+                    }) ;
                 return query.ToArray();
             }
         }

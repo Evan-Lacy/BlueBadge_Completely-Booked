@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,15 @@ namespace CompletelyBooked.Data
         [Required]
         public string Description { get; set; }
         [Required]
-        public string Publisher { get; set; }
+        public string BookPublisher { get; set; }
         public bool IsBestSeller { get; set; }
         public string ISBN { get; set; }
 
-
+        //[Required]
+        [ForeignKey(nameof(Publisher))]
+        public int PublisherId { get; set; }
+        public virtual Publisher Publisher { get; set; }
+        
 
     }
     public enum Genre

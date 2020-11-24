@@ -15,7 +15,7 @@ namespace CompletelyBooked.Models
         [Required]
         public string Author { get; set; }
         [Required]
-        public string Publisher { get; set; }
+        public string BookPublisher { get; set; }
         [Required]
         public Group Group { get; set; }
         [Required]
