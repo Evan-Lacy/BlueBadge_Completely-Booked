@@ -17,7 +17,7 @@ namespace CompletelyBooked.Services
                 PublisherId = model.PublisherId,
                 Name = model.Name,
                 Location = model.Location,
-                YearFounded = model.YearCreated
+                YearFounded = model.YearFounded
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -40,7 +40,7 @@ namespace CompletelyBooked.Services
                         PublisherId = e.PublisherId,
                         Name = e.Name,
                         Location = e.Location,
-                        YearCreated = e.YearFounded,
+                        YearFounded = e.YearFounded,
                         BestSellerCount = e.BestSellerCount,
                         BooksPublished = e.BooksPublished
                     });
@@ -56,7 +56,7 @@ namespace CompletelyBooked.Services
 
                 entity.Name = model.Name;
                 entity.Location = model.Location;
-                entity.YearFounded = model.YearCreated;
+                entity.YearFounded = model.YearFounded;
 
                 return ctx.SaveChanges() == 1;
             }

@@ -10,6 +10,6 @@ namespace CompletelyBooked.Models
     {
         public string Name { get; set; }
         public string Location { get; set; }
-        public int YearCreated { get; set; }
+        public int YearFounded { get; set; }
     }
 }
