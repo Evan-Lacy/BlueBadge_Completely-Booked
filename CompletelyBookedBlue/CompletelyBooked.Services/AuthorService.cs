@@ -41,17 +41,10 @@ namespace CompletelyBooked.Services
                     .Select
                     (e => new AuthorListItem
                     {
-<<<<<<< HEAD
                         Name = e.Name,
                         Birthday = e.Birthday,
                         Birthplace = e.Birthplace,
-                        About = e.About
-=======
-                        AuthorName = e.Name,
-                        AuthorBirthday = e.Birthday,
-                        AuthorBirthplace = e.Birthplace,
-                        AuthorAbout = e.About
->>>>>>> 6eca9831f0671a6d105ebd3bef531d718837b625
+                        About = e.About                   
                     }
                     );
                 return query.ToArray();
