@@ -9,10 +9,10 @@ namespace CompletelyBooked.Models
     public class AuthorDetail
     {
         public int AuthorId { get; set; }
-        public string AuthorName { get; set; }
-        public int AuthorBirthday { get; set; }
-        public string AuthorBirthplace { get; set; }
-        public string AuthorAbout { get; set; }
+        public string Name { get; set; }
+        public int Birthday { get; set; }
+        public string Birthplace { get; set; }
+        public string About { get; set; }
 
     }
 }
