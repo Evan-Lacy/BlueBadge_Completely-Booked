@@ -1,5 +1,6 @@
 ﻿using CompletelyBooked.Data;
 using CompletelyBooked.Models;
+using CompletelyBooked.WebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,9 +42,9 @@ namespace CompletelyBooked.Services
                     (e => new AuthorListItem
                     {
                         AuthorName = e.Name,
-                        AuhtorBirthday = e.Birthday,
+                        AuthorBirthday = e.Birthday,
                         AuthorBirthplace = e.Birthplace,
-                        AuhtorAbout = e.About
+                        AuthorAbout = e.About
                     }
                     );
                 return query.ToArray();
@@ -55,13 +56,13 @@ namespace CompletelyBooked.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                ctx.Authors.Single(e => e.Name == _name);
+                ctx.Authors.Single(e => e.Name == name);
                 return new AuthorDetail
                 {
-                    AuthorName = entity.Name,
-                    AuthorBirthday = entity.Birthday,
-                    AuthorBirthplace = entity.Birthplace,
-                    AuthorAbout = entity.About,
+                    Name = entity.Name,
+                    Birthday = entity.Birthday,
+                    Birthplace = entity.Birthplace,
+                    About = entity.About,
                 };
             }
         }
