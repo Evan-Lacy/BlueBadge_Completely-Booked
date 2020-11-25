@@ -27,13 +27,14 @@ namespace CompletelyBooked.Services
             }
         }
 
-        //Get All Publishers
-        public IEnumerable<PublisherListItem> GetPublishers()
+        //Get Publishers by Id
+        public IEnumerable<PublisherListItem> GetPublishersById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx
                     .Publishers
+                    .Where (e => id == e.PublisherId)
                     .Select
                     (e => new PublisherListItem
                     {
@@ -49,6 +50,27 @@ namespace CompletelyBooked.Services
                             Title = b.Title
                         }).ToList()
                     }) ;
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<PublisherListItem> GetPublishers()
+        {           
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+                    .Publishers
+                    .Select
+                    (e => new PublisherListItem
+                    {
+                        PublisherId = e.PublisherId,
+                        Name = e.Name,
+                        Location = e.Location,
+                        YearFounded = e.YearFounded,
+                        BestSellerCount = e.BestSellerCount,
+                        BookCount = e.BooksPublished.Count()
+                       
+                    });
                 return query.ToArray();
             }
         }
