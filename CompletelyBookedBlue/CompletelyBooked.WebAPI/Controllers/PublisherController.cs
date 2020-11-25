@@ -25,6 +25,13 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(publishers);
         }
 
+        public IHttpActionResult GetById(int id)
+        {
+            PublisherService pubService = CreatePublisherService();
+            var publishers = pubService.GetPublishersById(id);
+            return Ok(publishers);
+        }
+
         [HttpPost]
         public IHttpActionResult Post(PublisherCreate publisher)
         {

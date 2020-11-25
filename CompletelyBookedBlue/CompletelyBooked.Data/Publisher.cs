@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,5 +19,9 @@ namespace CompletelyBooked.Data
 
         public virtual List<Book> BooksPublished { get; set; } = new List<Book>();
         public int BestSellerCount { get; set; }
+
+        //[ForeignKey(nameof (IsBestSeller))]
+        //public int BookId { get; set; }
+        //public bool IsBestSeller { get; set; }
     }
 }

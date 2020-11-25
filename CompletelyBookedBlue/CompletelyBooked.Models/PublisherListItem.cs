@@ -15,5 +15,6 @@ namespace CompletelyBooked.Models
         public int YearFounded { get; set; }
         public  List<BookListItem> BooksPublished{ get; set; }
         public int BestSellerCount { get; set; }
+        public int BookCount { get; set; }
     }
 }
