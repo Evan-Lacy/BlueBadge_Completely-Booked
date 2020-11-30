@@ -103,6 +103,18 @@
     <Compile Include="Migrations\202011242122038_things.Designer.cs">
       <DependentUpon>202011242122038_things.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011301908432_updated-reviewData.cs" />
+    <Compile Include="Migrations\202011301908432_updated-reviewData.Designer.cs">
+      <DependentUpon>202011301908432_updated-reviewData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011301947176_updated-bookData.cs" />
+    <Compile Include="Migrations\202011301947176_updated-bookData.Designer.cs">
+      <DependentUpon>202011301947176_updated-bookData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011302021258_updated-BestSellershit.cs" />
+    <Compile Include="Migrations\202011302021258_updated-BestSellershit.Designer.cs">
+      <DependentUpon>202011302021258_updated-BestSellershit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publisher.cs" />
@@ -124,6 +136,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011242122038_things.resx">
       <DependentUpon>202011242122038_things.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011301908432_updated-reviewData.resx">
+      <DependentUpon>202011301908432_updated-reviewData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011301947176_updated-bookData.resx">
+      <DependentUpon>202011301947176_updated-bookData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011302021258_updated-BestSellershit.resx">
+      <DependentUpon>202011302021258_updated-BestSellershit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

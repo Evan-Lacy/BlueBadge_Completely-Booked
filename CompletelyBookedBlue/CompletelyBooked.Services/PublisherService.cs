@@ -42,7 +42,7 @@ namespace CompletelyBooked.Services
                         Name = e.Name,
                         Location = e.Location,
                         YearFounded = e.YearFounded,
-                        BestSellerCount = e.BestSellerCount,
+                        //BestSellerCount = e.BestSellerCount,
                         BooksPublished = e.BooksPublished.Select(b => new BookListItem
                         {
                             BookId = b.BookId,
@@ -67,7 +67,7 @@ namespace CompletelyBooked.Services
                         Name = e.Name,
                         Location = e.Location,
                         YearFounded = e.YearFounded,
-                        BestSellerCount = e.BestSellerCount,
+                        //BestSellerCount = e.BestSellerCount,
                         BookCount = e.BooksPublished.Count()
                        
                     });

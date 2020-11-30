@@ -13,8 +13,8 @@ namespace CompletelyBooked.Models
         public string Title { get; set; }       
         public string Author { get; set; }        
         public string BookPublisher { get; set; }
-        public Group Group { get; set; }       
-        public Genre Genre { get; set; }      
+        public string Group { get; set; }       
+        public string Genre { get; set; }      
         public string Description { get; set; }     
         public bool IsBestSeller { get; set; }
         public string ISBN { get; set; }

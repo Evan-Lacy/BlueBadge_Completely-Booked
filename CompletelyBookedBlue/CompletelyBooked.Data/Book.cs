@@ -23,8 +23,8 @@ namespace CompletelyBooked.Data
         public Genre Genre { get; set; }
         [Required]
         public string Description { get; set; }
-        [Required]
-        public string BookPublisher { get; set; }
+        //[Required]
+        //public string BookPublisher { get; set; }
         public bool IsBestSeller { get; set; }
         public string ISBN { get; set; }
 
