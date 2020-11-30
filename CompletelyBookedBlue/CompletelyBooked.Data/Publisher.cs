@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CompletelyBooked.Data
-{
+{ 
     public class Publisher
     {
         [Key]
