@@ -28,7 +28,7 @@ namespace CompletelyBooked.Services
         }
     
         //Get All Reviews
-        public IEnumerable<ReviewListItem> GetAllReviews(int id)
+        public IEnumerable<ReviewListItem> GetAllReviews()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -47,7 +47,7 @@ namespace CompletelyBooked.Services
         }
 
         //Get Reviews of a Single Book by Id
-        public IEnumerable<ReviewListItem> GetReviewsByBook(int id)
+        public IEnumerable<ReviewDetail> GetReviewsByBook(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -56,8 +56,9 @@ namespace CompletelyBooked.Services
                     .Reviews
                     .Where(e => id == e.BookId)
                     .Select
-                    (e => new ReviewListItem
+                    (e => new ReviewDetail
                     {
+                        BookTitle = e.Book.Title,
                         Rating = e.Rating,
                         ReviewDescription = e.ReviewDescription
                     });
@@ -67,6 +68,31 @@ namespace CompletelyBooked.Services
         }
 
         //Update Reviews
+        public bool UpdateReview(ReviewEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Reviews.Single(e => e.ReviewId == model.ReviewId);
+
+                entity.Rating = model.Rating;
+                entity.ReviewDescription = model.ReviewDescription;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        //Delete a Review
+        public bool DeleteReview(int id)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Reviews.Single(e => id == e.ReviewId);
+
+                ctx.Reviews.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 
 }

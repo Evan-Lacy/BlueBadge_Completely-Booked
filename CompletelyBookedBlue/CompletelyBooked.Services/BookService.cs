@@ -77,8 +77,8 @@ namespace CompletelyBooked.Services
                         Genre = entity.Genre.ToString(),
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
-                        ISBN = entity.ISBN
-
+                        ISBN = entity.ISBN,
+                        Reviews = entity.Reviews
                     };
             }
         }

@@ -19,6 +19,10 @@ namespace CompletelyBooked.WebAPI.Controllers
             return bookService;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IHttpActionResult Get()
         {
             BookService bookService = CreateBookService();
@@ -26,6 +30,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(books);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IHttpActionResult GetById(int id)
         {
             BookService bookService = CreateBookService();
@@ -33,6 +42,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(books);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
         public IHttpActionResult GetByTitle(string title)
         {
             BookService bookService = CreateBookService();
@@ -40,6 +54,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(books);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="author"></param>
+        /// <returns></returns>
         public IHttpActionResult GetByAuthor(string author)
         {
             BookService bookService = CreateBookService();
@@ -47,6 +66,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(books);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="isbn"></param>
+        /// <returns></returns>
         public IHttpActionResult GetByISBN(string isbn)
         {
             BookService bookService = CreateBookService();
@@ -54,6 +78,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(books);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
         public IHttpActionResult Post(BookCreate book)
         {
             if (!ModelState.IsValid)
@@ -66,7 +95,12 @@ namespace CompletelyBooked.WebAPI.Controllers
 
             return Ok();
         }
-
+    
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
         public IHttpActionResult Put(BookEdit book)
         {
             if (!ModelState.IsValid)
@@ -80,6 +114,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IHttpActionResult Delete(int id)
         {
             var service = CreateBookService();

@@ -18,5 +18,7 @@ namespace CompletelyBooked.Models
         public string Description { get; set; }     
         public bool IsBestSeller { get; set; }
         public string ISBN { get; set; }
+
+        public List<Review> Reviews { get; set; }
     }
 }
