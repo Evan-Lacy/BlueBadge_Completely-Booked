@@ -576,11 +576,18 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:CompletelyBooked.WebAPI.Controllers.ReviewController.GetReviewSById(System.Int32)">
+        <member name="M:CompletelyBooked.WebAPI.Controllers.ReviewController.GetReviewsByBookId(System.Int32)">
             <summary>
             Return a list of all Reviews of a single book by it's Id number
             </summary>
             <param name="id">This parameter is used for selecting all reviews of a book by that book's Id within the Completely Booked Database</param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.ReviewController.GetByReviewId(System.Int32)">
+            <summary>
+            Return a single Review based on ReviewId
+            </summary>
+            <param name="reviewId">This paramter allows an authorized user to return a single review from within the database based on the ReviewId number.</param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.ReviewController.PostAReview(CompletelyBooked.Models.ReviewCreate)">

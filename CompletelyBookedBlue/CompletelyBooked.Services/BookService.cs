@@ -10,12 +10,6 @@ namespace CompletelyBooked.Services
 {
     public class BookService
     {
-        //private readonly Guid _userId;
-
-        //public BookService(Guid userId)
-        //{
-           // _userId = userId;
-        //}
 
         public bool CreateBook(BookCreate model)
         {
@@ -51,7 +45,8 @@ namespace CompletelyBooked.Services
                                 {
                                     BookId = e.BookId,
                                     Title = e.Title,
-                                    Author = e.Author
+                                    Author = e.Author,
+                                    IsBestSeller = e.IsBestSeller
                                 }
                                 );
                 return query.ToArray();
@@ -78,7 +73,12 @@ namespace CompletelyBooked.Services
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
                         ISBN = entity.ISBN,
-                        Reviews = entity.Reviews
+                        Reviews = entity.Reviews.Select(e => new ReviewListItem
+                        {
+                            ReviewId = e.ReviewId,
+                            Rating = e.Rating,
+                            ReviewDescription = e.ReviewDescription
+                        }).ToList()
                     };
             }
         }
@@ -102,8 +102,13 @@ namespace CompletelyBooked.Services
                         Genre = entity.Genre.ToString(),
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
-                        ISBN = entity.ISBN
-
+                        ISBN = entity.ISBN,
+                        Reviews = entity.Reviews.Select(e => new ReviewListItem
+                        {
+                            ReviewId = e.ReviewId,
+                            Rating = e.Rating,
+                            ReviewDescription = e.ReviewDescription
+                        }).ToList()
                     };
             }
         }
@@ -122,7 +127,8 @@ namespace CompletelyBooked.Services
                                     {
                                         BookId = e.BookId,
                                         Title = e.Title,
-                                        Author = e.Author
+                                        Author = e.Author,
+                                        IsBestSeller = e.IsBestSeller
                                     }
                                     );
                 return query.ToArray();
@@ -143,7 +149,8 @@ namespace CompletelyBooked.Services
                                     {
                                         BookId = e.BookId,
                                         Title = e.Title,
-                                        Author = e.Author
+                                        Author = e.Author,
+                                        IsBestSeller = e.IsBestSeller
                                     }
                                     );
                 return query.ToArray();
@@ -169,8 +176,13 @@ namespace CompletelyBooked.Services
                         Genre = entity.Genre.ToString(),
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
-                        ISBN = entity.ISBN
-
+                        ISBN = entity.ISBN,
+                        Reviews = entity.Reviews.Select(e => new ReviewListItem
+                        {
+                            ReviewId = e.ReviewId,
+                            Rating = e.Rating,
+                            ReviewDescription = e.ReviewDescription
+                        }).ToList()
                     };
             }
         }

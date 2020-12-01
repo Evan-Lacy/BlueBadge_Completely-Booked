@@ -38,6 +38,7 @@ namespace CompletelyBooked.Services
                     .Select
                     (e => new ReviewListItem
                     {
+                        ReviewId = e.ReviewId,
                         Rating = e.Rating,
                         ReviewDescription = e.ReviewDescription
                     });
@@ -46,7 +47,7 @@ namespace CompletelyBooked.Services
             }
         }
 
-        //Get Reviews of a Single Book by Id
+        //Get All Reviews of a Single Book by BookId
         public IEnumerable<ReviewDetail> GetReviewsByBook(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -58,6 +59,29 @@ namespace CompletelyBooked.Services
                     .Select
                     (e => new ReviewDetail
                     {
+                        ReviewId = e.ReviewId,
+                        BookTitle = e.Book.Title,
+                        Rating = e.Rating,
+                        ReviewDescription = e.ReviewDescription
+                    });
+
+                return query.ToArray();
+            }
+        }
+
+        //Get A Single Review by ReviewID
+        public IEnumerable<ReviewDetail> GetByReviewId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+
+                var query = ctx
+                    .Reviews
+                    .Where(e => id == e.ReviewId)
+                    .Select
+                    (e => new ReviewDetail
+                    {
+                        ReviewId = e.ReviewId,
                         BookTitle = e.Book.Title,
                         Rating = e.Rating,
                         ReviewDescription = e.ReviewDescription

@@ -34,10 +34,22 @@ namespace CompletelyBooked.WebAPI.Controllers
         /// </summary>
         /// <param name="id">This parameter is used for selecting all reviews of a book by that book's Id within the Completely Booked Database</param>
         /// <returns></returns>
-        public IHttpActionResult GetReviewSById(int id)
+        public IHttpActionResult GetReviewsByBookId(int id)
         {
             ReviewService reviewService = CreateReviewService();
             var reviews = reviewService.GetReviewsByBook(id);
+            return Ok(reviews);
+        }
+
+        /// <summary>
+        /// Return a single Review based on ReviewId
+        /// </summary>
+        /// <param name="reviewId">This paramter allows an authorized user to return a single review from within the database based on the ReviewId number.</param>
+        /// <returns></returns>
+        public IHttpActionResult GetByReviewId(int reviewId)
+        {
+            ReviewService reviewService = CreateReviewService();
+            var reviews = reviewService.GetByReviewId(reviewId);
             return Ok(reviews);
         }
 

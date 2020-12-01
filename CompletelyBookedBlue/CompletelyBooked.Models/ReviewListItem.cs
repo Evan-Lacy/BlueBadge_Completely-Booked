@@ -8,6 +8,7 @@ namespace CompletelyBooked.Models
 {
     public class ReviewListItem
     {
+        public int ReviewId { get; set; }
         public int Rating { get; set; }
         public string ReviewDescription { get; set; }
     }
