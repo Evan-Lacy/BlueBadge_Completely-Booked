@@ -33,6 +33,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         /// <summary>
         /// This is to get Authors by name
         /// </summary>
+        /// <param name="name"></param>
         /// <returns></returns>
         public IHttpActionResult Get(string name)
         {
