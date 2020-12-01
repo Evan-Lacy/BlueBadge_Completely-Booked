@@ -41,6 +41,7 @@ namespace CompletelyBooked.Services
                     .Select
                     (e => new AuthorListItem
                     {
+                        AuthorId = e.AuthorId,
                         Name = e.Name,
                         Birthday = e.Birthday,
                         Birthplace = e.Birthplace,
@@ -59,6 +60,7 @@ namespace CompletelyBooked.Services
                 ctx.Authors.Single(e => e.Name == name);
                 return new AuthorDetail
                 {
+                    AuthorId = entity.AuthorId,
                     Name = entity.Name,
                     Birthday = entity.Birthday,
                     Birthplace = entity.Birthplace,
@@ -75,6 +77,7 @@ namespace CompletelyBooked.Services
                 ctx.Authors.Single(e => e.AuthorId == id);
                 return new AuthorDetail
                 {
+                    AuthorId = entity.AuthorId,
                     Name = entity.Name,
                     Birthday = entity.Birthday,
                     Birthplace = entity.Birthplace,

@@ -13,7 +13,7 @@ namespace CompletelyBooked.Data
         public int AuthorId { get; set; }
         public string Name { get; set; }
         [Required]
-        public DateTime Birthday { get; set; }
+        public string Birthday { get; set; }
         [Required]
         public string Birthplace { get; set; }
         [Required]
