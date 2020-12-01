@@ -18,6 +18,7 @@ namespace CompletelyBooked.Data
         public string Birthplace { get; set; }
         [Required]
         public string About { get; set; }
+        public virtual List<Book> BooksWritten { get; set; } = new List<Book>();
 
     }
 

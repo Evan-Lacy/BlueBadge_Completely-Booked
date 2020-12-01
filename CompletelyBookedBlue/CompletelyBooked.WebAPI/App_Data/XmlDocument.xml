@@ -520,11 +520,11 @@
             <param name="title"></param>
             <returns></returns>
         </member>
-        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByAuthor(System.String)">
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByAuthor(System.Int32)">
             <summary>
             This is to get books by Author 
             </summary>
-            <param name="author">This is to get books by Author within the Completely Booked Database</param>
+            <param name="authorId">This is to get books by Author within the Completely Booked Database</param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByISBN(System.String)">

@@ -13,7 +13,7 @@ namespace CompletelyBooked.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        public string Author { get; set; }
+        public int AuthorId { get; set; }
         [Required]
         public int PublisherId { get; set; }
         [Required]

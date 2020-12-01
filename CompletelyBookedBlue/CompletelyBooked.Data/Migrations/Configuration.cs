@@ -10,7 +10,6 @@ namespace CompletelyBooked.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "CompletelyBooked.Data.ApplicationDbContext";
         }
 
         protected override void Seed(CompletelyBooked.Data.ApplicationDbContext context)

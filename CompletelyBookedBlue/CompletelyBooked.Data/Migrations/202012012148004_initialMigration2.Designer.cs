@@ -7,13 +7,13 @@ namespace CompletelyBooked.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class UpdatedReviewTable : IMigrationMetadata
+    public sealed partial class initialMigration2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatedReviewTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initialMigration2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012010633465_Updated-ReviewTable"; }
+            get { return "202012012148004_initialMigration2"; }
         }
         
         string IMigrationMetadata.Source

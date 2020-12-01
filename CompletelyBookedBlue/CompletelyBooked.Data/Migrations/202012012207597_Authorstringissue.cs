@@ -3,7 +3,7 @@ namespace CompletelyBooked.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class things : DbMigration
+    public partial class Authorstringissue : DbMigration
     {
         public override void Up()
         {

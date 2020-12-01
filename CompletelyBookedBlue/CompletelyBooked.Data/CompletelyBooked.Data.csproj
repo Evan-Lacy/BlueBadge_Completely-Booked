@@ -87,45 +87,13 @@
     <Compile Include="Author.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202011231927550_InitialCreate.cs" />
-    <Compile Include="Migrations\202011231927550_InitialCreate.Designer.cs">
-      <DependentUpon>202011231927550_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202012012148004_initialMigration2.cs" />
+    <Compile Include="Migrations\202012012148004_initialMigration2.Designer.cs">
+      <DependentUpon>202012012148004_initialMigration2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011241841158_added-migrations.cs" />
-    <Compile Include="Migrations\202011241841158_added-migrations.Designer.cs">
-      <DependentUpon>202011241841158_added-migrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011242112120_cereal.cs" />
-    <Compile Include="Migrations\202011242112120_cereal.Designer.cs">
-      <DependentUpon>202011242112120_cereal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011242122038_things.cs" />
-    <Compile Include="Migrations\202011242122038_things.Designer.cs">
-      <DependentUpon>202011242122038_things.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011301908432_updated-reviewData.cs" />
-    <Compile Include="Migrations\202011301908432_updated-reviewData.Designer.cs">
-      <DependentUpon>202011301908432_updated-reviewData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011301947176_updated-bookData.cs" />
-    <Compile Include="Migrations\202011301947176_updated-bookData.Designer.cs">
-      <DependentUpon>202011301947176_updated-bookData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011302021258_updated-BestSellershit.cs" />
-    <Compile Include="Migrations\202011302021258_updated-BestSellershit.Designer.cs">
-      <DependentUpon>202011302021258_updated-BestSellershit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012010527466_Updated-Book-Review-List.cs" />
-    <Compile Include="Migrations\202012010527466_Updated-Book-Review-List.Designer.cs">
-      <DependentUpon>202012010527466_Updated-Book-Review-List.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012010633465_Updated-ReviewTable.cs" />
-    <Compile Include="Migrations\202012010633465_Updated-ReviewTable.Designer.cs">
-      <DependentUpon>202012010633465_Updated-ReviewTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012012057451_updated-authortable.cs" />
-    <Compile Include="Migrations\202012012057451_updated-authortable.Designer.cs">
-      <DependentUpon>202012012057451_updated-authortable.cs</DependentUpon>
+    <Compile Include="Migrations\202012012207597_Authorstringissue.cs" />
+    <Compile Include="Migrations\202012012207597_Authorstringissue.Designer.cs">
+      <DependentUpon>202012012207597_Authorstringissue.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,35 +105,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011231927550_InitialCreate.resx">
-      <DependentUpon>202011231927550_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012012148004_initialMigration2.resx">
+      <DependentUpon>202012012148004_initialMigration2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011241841158_added-migrations.resx">
-      <DependentUpon>202011241841158_added-migrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011242112120_cereal.resx">
-      <DependentUpon>202011242112120_cereal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011242122038_things.resx">
-      <DependentUpon>202011242122038_things.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011301908432_updated-reviewData.resx">
-      <DependentUpon>202011301908432_updated-reviewData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011301947176_updated-bookData.resx">
-      <DependentUpon>202011301947176_updated-bookData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011302021258_updated-BestSellershit.resx">
-      <DependentUpon>202011302021258_updated-BestSellershit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012010527466_Updated-Book-Review-List.resx">
-      <DependentUpon>202012010527466_Updated-Book-Review-List.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012010633465_Updated-ReviewTable.resx">
-      <DependentUpon>202012010633465_Updated-ReviewTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012012057451_updated-authortable.resx">
-      <DependentUpon>202012012057451_updated-authortable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012012207597_Authorstringissue.resx">
+      <DependentUpon>202012012207597_Authorstringissue.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

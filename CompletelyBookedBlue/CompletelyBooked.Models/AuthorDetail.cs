@@ -13,6 +13,7 @@ namespace CompletelyBooked.Models
         public string Birthday { get; set; }
         public string Birthplace { get; set; }
         public string About { get; set; }
+        public virtual List<BookListItem> BooksWritten { get; set; }
 
     }
 }

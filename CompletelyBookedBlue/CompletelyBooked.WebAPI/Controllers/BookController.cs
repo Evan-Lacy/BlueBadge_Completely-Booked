@@ -57,12 +57,12 @@ namespace CompletelyBooked.WebAPI.Controllers
         /// <summary>
         /// This is to get books by Author 
         /// </summary>
-        /// <param name="author">This is to get books by Author within the Completely Booked Database</param>
+        /// <param name="authorId">This is to get books by Author within the Completely Booked Database</param>
         /// <returns></returns>
-        public IHttpActionResult GetByAuthor(string author)
+        public IHttpActionResult GetByAuthor(int authorId)
         {
             BookService bookService = CreateBookService();
-            var books = bookService.GetBooksByAuthor(author);
+            var books = bookService.GetBooksByAuthor(authorId);
             return Ok(books);
         }
 
