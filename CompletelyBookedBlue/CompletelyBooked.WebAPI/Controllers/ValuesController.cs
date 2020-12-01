@@ -32,6 +32,10 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         // POST api/values
+         /// <summary>
+        /// This is to get all of the values of a specific target
+        /// </summary>
+        /// <returns></returns>
         public void Post([FromBody]string value)
         {
         }
@@ -42,6 +46,11 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         // DELETE api/values/5
+        /// <summary>
+        /// This is to get delete a value by ID
+        /// </summary>
+        /// <param name="id">Pass an ID</param>
+        /// <returns></returns>
         public void Delete(int id)
         {
         }

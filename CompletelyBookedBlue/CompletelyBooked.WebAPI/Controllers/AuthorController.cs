@@ -19,6 +19,10 @@ namespace CompletelyBooked.WebAPI.Controllers
             return authorService;
         }
 
+        /// <summary>
+        /// This is to get a list of all Authors
+        /// </summary>
+        /// <returns></returns>
         public IHttpActionResult Get()
         {
             AuthorService authorService = CreateAuthorService();
@@ -26,6 +30,10 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(authors);
         }
 
+        /// <summary>
+        /// This is to get Authors by name
+        /// </summary>
+        /// <returns></returns>
         public IHttpActionResult Get(string name)
         {
             AuthorService authorService = CreateAuthorService();
@@ -33,6 +41,10 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(author);
         }
 
+        /// <summary>
+        /// This is to Create an Author
+        /// </summary>
+        /// <returns></returns>
         public IHttpActionResult Post(AuthorCreate author)
         {
             if (!ModelState.IsValid)

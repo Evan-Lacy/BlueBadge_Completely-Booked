@@ -20,7 +20,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get a list of all books
         /// </summary>
         /// <returns></returns>
         public IHttpActionResult Get()
@@ -31,7 +31,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get a Book by ID
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -43,7 +43,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get books by Title 
         /// </summary>
         /// <param name="title"></param>
         /// <returns></returns>
@@ -55,7 +55,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get books by Author 
         /// </summary>
         /// <param name="author"></param>
         /// <returns></returns>
@@ -67,7 +67,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get books by ISBN
         /// </summary>
         /// <param name="isbn"></param>
         /// <returns></returns>
@@ -79,7 +79,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to Create a new Book
         /// </summary>
         /// <param name="book"></param>
         /// <returns></returns>
@@ -115,7 +115,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to delete a book by ID 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
