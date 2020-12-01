@@ -20,7 +20,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get a list of all books
         /// </summary>
         /// <returns></returns>
         public IHttpActionResult Get()
@@ -31,7 +31,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get a Book by ID
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -43,7 +43,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get books by Title 
         /// </summary>
         /// <param name="title"></param>
         /// <returns></returns>
@@ -55,9 +55,9 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get books by Author 
         /// </summary>
-        /// <param name="author"></param>
+        /// <param name="author">This is to get books by Author within the Completely Booked Database</param>
         /// <returns></returns>
         public IHttpActionResult GetByAuthor(string author)
         {
@@ -67,9 +67,9 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get books by ISBN
         /// </summary>
-        /// <param name="isbn"></param>
+        /// <param name="isbn">This is to get books by ISBN within the Completely Booked Database</param>
         /// <returns></returns>
         public IHttpActionResult GetByISBN(string isbn)
         {
@@ -79,9 +79,9 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to Create a new Book
         /// </summary>
-        /// <param name="book"></param>
+        /// <param name="book">This is to create a new book within the Completely Booked Database</param>
         /// <returns></returns>
         public IHttpActionResult Post(BookCreate book)
         {
@@ -115,9 +115,9 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to delete a book by ID 
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">This is to delete a book by using the book ID</param>
         /// <returns></returns>
         public IHttpActionResult Delete(int id)
         {

@@ -1,4 +1,5 @@
-﻿using CompletelyBooked.Services;
+﻿using CompletelyBooked.Models;
+using CompletelyBooked.Services;
 using CompletelyBooked.WebAPI.Models;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,10 @@ namespace CompletelyBooked.WebAPI.Controllers
             return authorService;
         }
 
+        /// <summary>
+        /// This is to get a list of all Authors
+        /// </summary>
+        /// <returns></returns>
         public IHttpActionResult Get()
         {
             AuthorService authorService = CreateAuthorService();
@@ -26,6 +31,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(authors);
         }
 
+        /// <summary>
+        /// This is to get Authors by name
+        /// </summary>
+        /// <param name="name">This is to get Authors by name within the Completely Booked Database</param>
+        /// <returns></returns>
         public IHttpActionResult Get(string name)
         {
             AuthorService authorService = CreateAuthorService();
@@ -33,6 +43,17 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(author);
         }
 
+        public IHttpActionResult GetById(int id)
+        {
+            AuthorService authorService = CreateAuthorService();
+            var authors = authorService.GetAuthorById(id);
+            return Ok(authors);
+        }
+
+        /// <summary>
+        /// This is to Create an Author
+        /// </summary>
+        /// <returns></returns>
         public IHttpActionResult Post(AuthorCreate author)
         {
             if (!ModelState.IsValid)
@@ -49,6 +70,33 @@ namespace CompletelyBooked.WebAPI.Controllers
 
             return Ok();//200
         }
+
+        public IHttpActionResult Put(AuthorEdit author)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateAuthorService();
+
+            if (!service.UpdateAuthor(author))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateAuthorService();
+
+            if (!service.DeleteAuthor(id))
+            {
+                return InternalServerError();
+            }
+
+            return Ok();
+        }
+
+
 
     }
 }

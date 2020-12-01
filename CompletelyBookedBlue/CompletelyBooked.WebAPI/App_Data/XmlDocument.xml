@@ -481,45 +481,64 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.AuthorController.Get">
+            <summary>
+            This is to get a list of all Authors
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.AuthorController.Get(System.String)">
+            <summary>
+            This is to get Authors by name
+            </summary>
+            <param name="name">This is to get Authors by name within the Completely Booked Database</param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.AuthorController.Post(CompletelyBooked.WebAPI.Models.AuthorCreate)">
+            <summary>
+            This is to Create an Author
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.Get">
             <summary>
-            
+            This is to get a list of all books
             </summary>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetById(System.Int32)">
             <summary>
-            
+            This is to get a Book by ID
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByTitle(System.String)">
             <summary>
-            
+            This is to get books by Title 
             </summary>
             <param name="title"></param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByAuthor(System.String)">
             <summary>
-            
+            This is to get books by Author 
             </summary>
-            <param name="author"></param>
+            <param name="author">This is to get books by Author within the Completely Booked Database</param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByISBN(System.String)">
             <summary>
-            
+            This is to get books by ISBN
             </summary>
-            <param name="isbn"></param>
+            <param name="isbn">This is to get books by ISBN within the Completely Booked Database</param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.Post(CompletelyBooked.Models.BookCreate)">
             <summary>
-            
+            This is to Create a new Book
             </summary>
-            <param name="book"></param>
+            <param name="book">This is to create a new book within the Completely Booked Database</param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.Put(CompletelyBooked.Models.BookEdit)">
@@ -531,29 +550,29 @@
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.Delete(System.Int32)">
             <summary>
-            
+            This is to delete a book by ID 
             </summary>
-            <param name="id"></param>
+            <param name="id">This is to delete a book by using the book ID</param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.PublisherController.Get">
             <summary>
-            
+            This is to get a list of Publishers 
             </summary>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.PublisherController.GetById(System.Int32)">
             <summary>
-            
+            This is to get publishers by Id
             </summary>
-            <param name="id"></param>
+            <param name="id">This is to get a publisher by the publisher ID within the Completely Booked Database</param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.PublisherController.Post(CompletelyBooked.Models.PublisherCreate)">
             <summary>
-            
+            This is to create a Publisher 
             </summary>
-            <param name="publisher"></param>
+            <param name="publisher">This is to create a Publisher within the Completely Booked Database</param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.PublisherController.Put(CompletelyBooked.Models.PublisherEdit)">
@@ -620,6 +639,19 @@
         <member name="M:CompletelyBooked.WebAPI.Controllers.ValuesController.Get(System.Int32)">
             <summary>
             This is to get a value by ID
+            </summary>
+            <param name="id">Pass an ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.ValuesController.Post(System.String)">
+            <summary>
+            This is to get all of the values of a specific target
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            This is to get delete a value by ID
             </summary>
             <param name="id">Pass an ID</param>
             <returns></returns>

@@ -210,6 +210,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+
         public bool DeleteBook(int bookId)
         {
             using (var ctx = new ApplicationDbContext())

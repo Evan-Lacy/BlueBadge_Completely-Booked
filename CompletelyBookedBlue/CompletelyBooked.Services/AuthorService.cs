@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CompletelyBooked.Services
 {
-   
-     public class AuthorService
-     {
+
+    public class AuthorService
+    {
 
 
         public bool CreateAuthor(AuthorCreate model)
@@ -22,7 +22,7 @@ namespace CompletelyBooked.Services
                 Birthday = model.Birthday,
                 Birthplace = model.Birthplace,
                 About = model.About,
- 
+
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -44,7 +44,7 @@ namespace CompletelyBooked.Services
                         Name = e.Name,
                         Birthday = e.Birthday,
                         Birthplace = e.Birthplace,
-                        About = e.About                   
+                        About = e.About
                     }
                     );
                 return query.ToArray();
@@ -66,5 +66,58 @@ namespace CompletelyBooked.Services
                 };
             }
         }
-     }
+
+        public AuthorDetail GetAuthorById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                ctx.Authors.Single(e => e.AuthorId == id);
+                return new AuthorDetail
+                {
+                    Name = entity.Name,
+                    Birthday = entity.Birthday,
+                    Birthplace = entity.Birthplace,
+                    About = entity.About,
+                };
+            }
+        }
+
+        public bool UpdateAuthor(AuthorEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Authors
+                        .Single(e => e.AuthorId == model.AuthorId);
+
+                entity.Name = model.Name;
+                entity.Birthday = model.Birthday;
+                entity.Birthplace = model.Birthplace;
+                entity.About = model.About;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
+
+        public bool DeleteAuthor(int authorId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Authors
+                        .Single(e => e.AuthorId == authorId);
+
+                ctx.Authors.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+
+
+        }
+    }
+
 }

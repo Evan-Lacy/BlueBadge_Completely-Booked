@@ -18,7 +18,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get a list of Publishers 
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -30,9 +30,9 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to get publishers by Id
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">This is to get a publisher by the publisher ID within the Completely Booked Database</param>
         /// <returns></returns>
         public IHttpActionResult GetById(int id)
         {
@@ -43,9 +43,9 @@ namespace CompletelyBooked.WebAPI.Controllers
 
 
         /// <summary>
-        /// 
+        /// This is to create a Publisher 
         /// </summary>
-        /// <param name="publisher"></param>
+        /// <param name="publisher">This is to create a Publisher within the Completely Booked Database</param>
         /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Post(PublisherCreate publisher)
