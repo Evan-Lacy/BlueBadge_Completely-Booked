@@ -23,10 +23,12 @@ namespace CompletelyBooked.Data
         public Genre Genre { get; set; }
         [Required]
         public string Description { get; set; }
-        [Required]
-        public string BookPublisher { get; set; }
+        //[Required]
+        //public string BookPublisher { get; set; }
         public bool IsBestSeller { get; set; }
         public string ISBN { get; set; }
+
+        public virtual List<Review> Reviews { get; set; } = new List<Review>();
 
         //[Required]
         [ForeignKey(nameof(Publisher))]

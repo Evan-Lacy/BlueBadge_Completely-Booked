@@ -28,7 +28,7 @@ namespace CompletelyBooked.Services
         }
 
         //Get Publishers by Id
-        public IEnumerable<PublisherListItem> GetPublishersById(int id)
+        public IEnumerable<PublisherDetail> GetPublishersById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -36,18 +36,19 @@ namespace CompletelyBooked.Services
                     .Publishers
                     .Where (e => id == e.PublisherId)
                     .Select
-                    (e => new PublisherListItem
+                    (e => new PublisherDetail
                     {
                         PublisherId = e.PublisherId,
                         Name = e.Name,
                         Location = e.Location,
                         YearFounded = e.YearFounded,
-                        BestSellerCount = e.BestSellerCount,
+                        BestSellerCount = e.BooksPublished.Where(b => b.IsBestSeller == true).ToList().Count(),
                         BooksPublished = e.BooksPublished.Select(b => new BookListItem
                         {
                             BookId = b.BookId,
                             Author = b.Author,
-                            Title = b.Title
+                            Title = b.Title, 
+                            IsBestSeller = b.IsBestSeller
                         }).ToList()
                     }) ;
                 return query.ToArray();
@@ -67,9 +68,8 @@ namespace CompletelyBooked.Services
                         Name = e.Name,
                         Location = e.Location,
                         YearFounded = e.YearFounded,
-                        BestSellerCount = e.BestSellerCount,
-                        BookCount = e.BooksPublished.Count()
-                       
+                        BookCount = e.BooksPublished.Count(),
+                        BestSellerCount = e.BooksPublished.Where(b => b.IsBestSeller == true).ToList().Count()
                     });
                 return query.ToArray();
             }

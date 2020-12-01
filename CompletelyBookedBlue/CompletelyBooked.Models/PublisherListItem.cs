@@ -13,8 +13,16 @@ namespace CompletelyBooked.Models
         public string Name { get; set; }
         public string Location { get; set; }
         public int YearFounded { get; set; }
-        public  List<BookListItem> BooksPublished{ get; set; }
-        public int BestSellerCount { get; set; }
+        public int BestSellerCount
+        { get; set;
+            //get
+            //{
+            //    int bestSellerCount = 0;
+            //    //bestSellerCount += BooksPublished.Where(e => e.IsBestSeller == true).Count();
+
+            //    return bestSellerCount += BooksPublished.Where(e => e.IsBestSeller == true).ToList().Count(); ;
+            //}
+        }
         public int BookCount { get; set; }
     }
 }

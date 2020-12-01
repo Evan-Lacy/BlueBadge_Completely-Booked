@@ -23,7 +23,7 @@ namespace CompletelyBooked.Services
             {
                 Title = model.Title,
                 Author = model.Author,
-                BookPublisher = model.BookPublisher,
+                PublisherId = model.PublisherId,
                 Group = model.Group,
                 Genre = model.Genre,
                 Description = model.Description,
@@ -72,13 +72,13 @@ namespace CompletelyBooked.Services
                         BookId = entity.BookId,
                         Title = entity.Title,
                         Author = entity.Author,
-                        BookPublisher = entity.BookPublisher,
-                        Group = entity.Group,
-                        Genre = entity.Genre,
+                        BookPublisher = entity.Publisher.Name,
+                        Group = entity.Group.ToString(),
+                        Genre = entity.Genre.ToString(),
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
-                        ISBN = entity.ISBN
-
+                        ISBN = entity.ISBN,
+                        Reviews = entity.Reviews
                     };
             }
         }
@@ -97,9 +97,9 @@ namespace CompletelyBooked.Services
                         BookId = entity.BookId,
                         Title = entity.Title,
                         Author = entity.Author,
-                        BookPublisher = entity.BookPublisher,
-                        Group = entity.Group,
-                        Genre = entity.Genre,
+                        BookPublisher = entity.Publisher.Name,
+                        Group = entity.Group.ToString(),
+                        Genre = entity.Genre.ToString(),
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
                         ISBN = entity.ISBN
@@ -164,9 +164,9 @@ namespace CompletelyBooked.Services
                         BookId = entity.BookId,
                         Title = entity.Title,
                         Author = entity.Author,
-                        BookPublisher = entity.BookPublisher,
-                        Group = entity.Group,
-                        Genre = entity.Genre,
+                        BookPublisher = entity.Publisher.Name,
+                        Group = entity.Group.ToString(),
+                        Genre = entity.Genre.ToString(),
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
                         ISBN = entity.ISBN
@@ -186,7 +186,7 @@ namespace CompletelyBooked.Services
 
                 entity.Title = model.Title;
                 entity.Author = model.Author;
-                entity.BookPublisher = model.BookPublisher;
+                entity.PublisherId = model.PublisherId;
                 entity.Group = model.Group;
                 entity.Genre = model.Genre;
                 entity.Description = model.Description;

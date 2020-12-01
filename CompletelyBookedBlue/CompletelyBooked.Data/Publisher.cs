@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CompletelyBooked.Data
-{
+{ 
     public class Publisher
     {
         [Key]
@@ -18,7 +18,16 @@ namespace CompletelyBooked.Data
         public int YearFounded { get; set; }
 
         public virtual List<Book> BooksPublished { get; set; } = new List<Book>();
-        public int BestSellerCount { get; set; }
+        public int BestSellerCount 
+        {
+            get
+            {
+                int bestSellerCount = BooksPublished.Where(e => e.IsBestSeller == true).Count();
+                //bestSellerCount++;
+                return bestSellerCount;
+            }
+        }
+
 
         //[ForeignKey(nameof (IsBestSeller))]
         //public int BookId { get; set; }

@@ -17,6 +17,10 @@ namespace CompletelyBooked.WebAPI.Controllers
             return pubService;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult Get()
         {
@@ -25,6 +29,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(publishers);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IHttpActionResult GetById(int id)
         {
             PublisherService pubService = CreatePublisherService();
@@ -32,6 +41,12 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(publishers);
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="publisher"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult Post(PublisherCreate publisher)
         {
@@ -50,6 +65,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok();//200
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="publisher"></param>
+        /// <returns></returns>
         [HttpPut]
         public IHttpActionResult Put(PublisherEdit publisher)
         {
@@ -68,6 +88,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok();//200
         }
 
+        /// <summary>
+        /// Delete a Publisher via this query with the Publisher Name
+        /// </summary>
+        /// <param name="name">This parameter is designed to allow the authorized user to delete a publisher from the Completely Booked Database.</param>
+        /// <returns></returns>
         [HttpDelete]
         public IHttpActionResult Delete(string name)
         {

@@ -67,6 +67,10 @@
     <Compile Include="PublisherDetail.cs" />
     <Compile Include="PublisherEdit.cs" />
     <Compile Include="PublisherListItem.cs" />
+    <Compile Include="ReviewCreate.cs" />
+    <Compile Include="ReviewDetail.cs" />
+    <Compile Include="ReviewEdit.cs" />
+    <Compile Include="ReviewListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
