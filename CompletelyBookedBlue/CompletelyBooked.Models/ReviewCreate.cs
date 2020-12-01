@@ -9,6 +9,7 @@ namespace CompletelyBooked.Models
 {
     public class ReviewCreate
     {
+        [Required]
         public int BookId { get; set; }
         [Required]
         public int Rating { get; set; }

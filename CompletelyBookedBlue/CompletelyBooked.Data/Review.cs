@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,11 @@ namespace CompletelyBooked.Data
 {
     public class Review
     {
+        [Key]
         public int ReviewId { get; set; }
+        [Required]
         public int Rating { get; set; }
+        [Required]
         public string ReviewDescription { get; set; }
 
 

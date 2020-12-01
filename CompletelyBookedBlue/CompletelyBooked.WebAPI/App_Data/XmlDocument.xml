@@ -481,6 +481,61 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByTitle(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByAuthor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="author"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByISBN(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="isbn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.Post(CompletelyBooked.Models.BookCreate)">
+            <summary>
+            
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.Put(CompletelyBooked.Models.BookEdit)">
+            <summary>
+            
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.PublisherController.Get">
             <summary>
             
