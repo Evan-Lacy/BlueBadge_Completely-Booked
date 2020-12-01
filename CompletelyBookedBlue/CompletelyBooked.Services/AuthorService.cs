@@ -52,37 +52,57 @@ namespace CompletelyBooked.Services
             }
         }
 
-        public AuthorDetail GetAuthorByName(string name)
+        public IEnumerable<AuthorDetail> GetAuthorByName(string name)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                ctx.Authors.Single(e => e.Name == name);
-                return new AuthorDetail
+                var query =
+                ctx.Authors
+                .Where(e => name == e.Name)
+                .Select
+                (e => new AuthorDetail
                 {
-                    AuthorId = entity.AuthorId,
-                    Name = entity.Name,
-                    Birthday = entity.Birthday,
-                    Birthplace = entity.Birthplace,
-                    About = entity.About,
-                };
+                    AuthorId = e.AuthorId,
+                    Name = e.Name,
+                    Birthday = e.Birthday,
+                    Birthplace = e.Birthplace,
+                    About = e.About,
+                    BooksWritten = e.BooksWritten.Select(b => new BookListItem
+                    {
+                        BookId = b.BookId,
+                        AuthorId = b.Author.Name,
+                        Title = b.Title,
+                        IsBestSeller = b.IsBestSeller
+                    }).ToList()
+                });
+                return query.ToArray();
             }
         }
 
-        public AuthorDetail GetAuthorById(int id)
+        public IEnumerable<AuthorDetail> GetAuthorById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                ctx.Authors.Single(e => e.AuthorId == id);
-                return new AuthorDetail
+                var query =
+                ctx.Authors
+                .Where(e => id == e.AuthorId)
+                .Select
+                (e => new AuthorDetail
                 {
-                    AuthorId = entity.AuthorId,
-                    Name = entity.Name,
-                    Birthday = entity.Birthday,
-                    Birthplace = entity.Birthplace,
-                    About = entity.About,
-                };
+                    AuthorId = e.AuthorId,
+                    Name = e.Name,
+                    Birthday = e.Birthday,
+                    Birthplace = e.Birthplace,
+                    About = e.About,
+                    BooksWritten = e.BooksWritten.Select(b => new BookListItem
+                    {
+                        BookId = b.BookId,
+                        AuthorId = b.Author.Name,
+                        Title = b.Title,
+                        IsBestSeller = b.IsBestSeller
+                    }).ToList()
+                });
+                return query.ToArray();
             }
         }
 
