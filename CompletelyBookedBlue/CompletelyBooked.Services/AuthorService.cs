@@ -13,7 +13,7 @@ namespace CompletelyBooked.Services
     public class AuthorService
     {
 
-
+        //Create a New Author object for the Database
         public bool CreateAuthor(AuthorCreate model)
         {
             var entity = new Author()
@@ -32,6 +32,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //Method to get all Authors within the Database
         public IEnumerable<AuthorListItem> GetAuthors()
         {
             using (var ctx = new ApplicationDbContext())
@@ -52,6 +53,8 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //Method to retrieve the Author from the Database via the Author Name
+        //The API call in Postman is a query - ?name=name
         public IEnumerable<AuthorDetail> GetAuthorByName(string name)
         {
             using (var ctx = new ApplicationDbContext())
@@ -70,7 +73,7 @@ namespace CompletelyBooked.Services
                     BooksWritten = e.BooksWritten.Select(b => new BookListItem
                     {
                         BookId = b.BookId,
-                        AuthorId = b.Author.Name,
+                        Author = b.Author.Name,
                         Title = b.Title,
                         IsBestSeller = b.IsBestSeller
                     }).ToList()
@@ -79,6 +82,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //Method to retrieve the Author from the Database via the AuthorId
         public IEnumerable<AuthorDetail> GetAuthorById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -95,9 +99,9 @@ namespace CompletelyBooked.Services
                     Birthplace = e.Birthplace,
                     About = e.About,
                     BooksWritten = e.BooksWritten.Select(b => new BookListItem
-                    {
+                    { //This is a reference to display all the books and specific information about them
                         BookId = b.BookId,
-                        AuthorId = b.Author.Name,
+                        Author = b.Author.Name,
                         Title = b.Title,
                         IsBestSeller = b.IsBestSeller
                     }).ToList()
@@ -106,6 +110,8 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //Update an Author in the Database by changing Name, Birthday, Birthplace, or About
+        //Based around the AuthorId
         public bool UpdateAuthor(AuthorEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -125,6 +131,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //Delete an Author from the Database, and consequently deletes all books they have written from the Book Table
         public bool DeleteAuthor(int authorId)
         {
             using (var ctx = new ApplicationDbContext())
