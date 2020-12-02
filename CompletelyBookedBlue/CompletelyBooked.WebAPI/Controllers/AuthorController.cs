@@ -43,10 +43,22 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(author);
         }
 
+        [HttpGet]
+        [ActionName("default")]
         public IHttpActionResult GetById(int id)
         {
             AuthorService authorService = CreateAuthorService();
             var authors = authorService.GetAuthorById(id);
+            return Ok(authors);
+        }
+
+        [HttpGet]
+        [ActionName("BestSellers")]
+        
+        public IHttpActionResult GetAuthorBestSellers(int id)
+        {
+            AuthorService authorService = CreateAuthorService();
+            var authors = authorService.GetAuthorBestSellers(id);
             return Ok(authors);
         }
 

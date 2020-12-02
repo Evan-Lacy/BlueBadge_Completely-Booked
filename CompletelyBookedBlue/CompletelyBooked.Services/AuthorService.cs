@@ -70,13 +70,14 @@ namespace CompletelyBooked.Services
                     Birthday = e.Birthday,
                     Birthplace = e.Birthplace,
                     About = e.About,
+                    BestSellerCount = e.BooksWritten.Where(b => b.IsBestSeller == true).ToList().Count(),
                     BooksWritten = e.BooksWritten.Select(b => new BookListItem
                     {
                         BookId = b.BookId,
                         AuthorId = b.Author.Name,
                         Title = b.Title,
                         IsBestSeller = b.IsBestSeller
-                    }).ToList()
+                    }).ToList(),
                 });
                 return query.ToArray();
             }
@@ -98,6 +99,7 @@ namespace CompletelyBooked.Services
                     Birthday = e.Birthday,
                     Birthplace = e.Birthplace,
                     About = e.About,
+                    BestSellerCount = e.BooksWritten.Where(b => b.IsBestSeller == true).ToList().Count(),
                     BooksWritten = e.BooksWritten.Select(b => new BookListItem
                     { //This is a reference to display all the books and specific information about them
                         BookId = b.BookId,
@@ -110,8 +112,36 @@ namespace CompletelyBooked.Services
             }
         }
 
+
+        public IEnumerable<AuthorBestSeller> GetAuthorBestSellers(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                ctx.Authors
+                .Where(e => id == e.AuthorId)
+                .Select
+                (e => new AuthorBestSeller
+                {
+                    AuthorId = e.AuthorId,
+                    Name = e.Name,                   
+                    BestSellerCount = e.BooksWritten.Where(b => b.IsBestSeller == true).ToList().Count(),
+                    BooksWritten = e.BooksWritten.Where(b => b.IsBestSeller == true).ToList().Select(b => new BookListItem
+                    {
+                        BookId = b.BookId,
+                        AuthorId = b.Author.Name,
+                        Title = b.Title,
+                        IsBestSeller = b.IsBestSeller
+                    }).ToList(),
+                });
+                return query.ToArray();
+            }
+        }
+
+
         //Update an Author in the Database by changing Name, Birthday, Birthplace, or About
         //Based around the AuthorId
+
         public bool UpdateAuthor(AuthorEdit model)
         {
             using (var ctx = new ApplicationDbContext())
