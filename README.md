@@ -21,6 +21,7 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 [Tickets via Trello](https://trello.com/b/lL78YX0W/grumpy-tickets)
 
 ![image](https://user-images.githubusercontent.com/72028079/100916129-57a9ee00-34a3-11eb-8c8e-74bdc3115f28.png)
+
 [User Stories](https://docs.google.com/document/d/1CZ0B3-hrsIBRteSKtMOKsDRXp80dbEY2TAQVw8BEixA/edit?usp=sharing)
 
 
