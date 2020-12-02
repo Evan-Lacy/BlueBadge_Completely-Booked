@@ -43,6 +43,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(author);
         }
 
+        /// <summary>
+        /// This is to request an Author by ID
+        /// </summary>
+        /// <param name="id">This is to get an Author within the Completely Booked Database using specific Author Id's </param>
+        /// <returns></returns>
         public IHttpActionResult GetById(int id)
         {
             AuthorService authorService = CreateAuthorService();
@@ -71,6 +76,10 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok();//200
         }
 
+        /// <summary>
+        /// This is to Edit Author information 
+        /// </summary>
+        /// <returns></returns>
         public IHttpActionResult Put(AuthorEdit author)
         {
             if (!ModelState.IsValid)
@@ -84,6 +93,11 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// This is to Delete Author information 
+        /// </summary>
+        /// <param name="id">This is to delete an Author within the Completely Booked Database using specific Author Id's </param>
+        /// <returns></returns>
         public IHttpActionResult Delete(int id)
         {
             var service = CreateAuthorService();

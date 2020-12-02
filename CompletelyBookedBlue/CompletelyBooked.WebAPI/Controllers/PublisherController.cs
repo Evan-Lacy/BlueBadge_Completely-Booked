@@ -66,9 +66,9 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// 
+        /// This is to update a Publisher
         /// </summary>
-        /// <param name="publisher"></param>
+        /// <param name="publisher">This is to update a publisher within the Completely Booked Database</param>
         /// <returns></returns>
         [HttpPut]
         public IHttpActionResult Put(PublisherEdit publisher)
