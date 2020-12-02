@@ -35,7 +35,7 @@ https://github.com/Evan-Lacy/BlueBadge_Completely-Booked.git
 
 ## Status 
 
-As of now, the project planning has been completed and approved by our Eleven Fifty Instructor. We will begin building on Monday, November 23, 2020. 
+Currently in the final stages of the project. Working on finalizing last minute details and preparing for a 5pm deadline November, 2, 2020. 
 
 ## Contact
 Created by @evan-lacy @sedutiel and @carltgoss 
