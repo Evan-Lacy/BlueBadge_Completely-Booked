@@ -73,7 +73,7 @@ namespace CompletelyBooked.Services
                     BooksWritten = e.BooksWritten.Select(b => new BookListItem
                     {
                         BookId = b.BookId,
-                        Author = b.Author.Name,
+                        AuthorId = b.Author.Name,
                         Title = b.Title,
                         IsBestSeller = b.IsBestSeller
                     }).ToList()
@@ -101,7 +101,7 @@ namespace CompletelyBooked.Services
                     BooksWritten = e.BooksWritten.Select(b => new BookListItem
                     { //This is a reference to display all the books and specific information about them
                         BookId = b.BookId,
-                        Author = b.Author.Name,
+                        AuthorId = b.Author.Name,
                         Title = b.Title,
                         IsBestSeller = b.IsBestSeller
                     }).ToList()
