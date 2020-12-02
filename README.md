@@ -21,6 +21,7 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 ## API Endpoints 
 
 ![image](https://user-images.githubusercontent.com/72028079/100915583-8d9aa280-34a2-11eb-8e79-b3bf874c2c86.png)
+![image](https://user-images.githubusercontent.com/72028079/100915692-b1f67f00-34a2-11eb-9b0b-dd66b5b5a9d3.png)
 
 ## Technologies 
 
