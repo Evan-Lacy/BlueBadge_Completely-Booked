@@ -22,9 +22,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         /// <summary>
         /// This is to get a list of all books
         /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        [ActionName("default")]
+        /// <returns></returns>       
         public IHttpActionResult Get()
         {
             BookService bookService = CreateBookService();
@@ -32,8 +30,6 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(books);
         }
 
-        [HttpGet ]
-        [ActionName("BSBooks")]
         public IHttpActionResult GetBestSellers()
         {
             BookService bookService = CreateBookService();
