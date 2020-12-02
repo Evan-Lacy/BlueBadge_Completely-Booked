@@ -44,7 +44,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         /// <summary>
         /// This is to get a Book by ID
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">This is to get a Book within the Completely Booked Database using the Book ID</param>
         /// <returns></returns>
         public IHttpActionResult GetById(int id)
         {
@@ -108,9 +108,9 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
     
         /// <summary>
-        /// 
+        /// This is to Edit a Book 
         /// </summary>
-        /// <param name="book"></param>
+        /// <param name="book">This function allows you to Edit a book within the Completely Booked Database</param>
         /// <returns></returns>
         public IHttpActionResult Put(BookEdit book)
         {

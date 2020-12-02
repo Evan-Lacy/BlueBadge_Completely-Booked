@@ -15,7 +15,7 @@ namespace CompletelyBooked.WebAPI.Models
         public string Birthday { get; set; }
         public string Birthplace { get; set; }
         public string About{ get; set; }
-      
+
     }
 
 }
