@@ -53,6 +53,28 @@ namespace CompletelyBooked.Services
             }
         }
 
+        public IEnumerable<BookBestSeller> GetBestSellers()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Books
+                        .Where(e => e.IsBestSeller == true)
+                        .Select(
+                            e =>
+                                new BookBestSeller
+                                {
+                                    BookId = e.BookId,
+                                    Title = e.Title,
+                                    AuthorId = e.Author.Name,                                                            
+                                    
+                                }
+                                );
+                return query.ToArray();
+            }
+        }
+
         public BookDetail GetBookById(int id)
         {
             using (var ctx = new ApplicationDbContext())

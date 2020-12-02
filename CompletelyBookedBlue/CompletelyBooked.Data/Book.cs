@@ -29,6 +29,7 @@ namespace CompletelyBooked.Data
         public string ISBN { get; set; }
 
         public virtual List<Review> Reviews { get; set; } = new List<Review>();
+        public virtual List<Book> BooksWritten { get; set; } = new List<Book>();
 
         //[Required]
         [ForeignKey(nameof(Publisher))]

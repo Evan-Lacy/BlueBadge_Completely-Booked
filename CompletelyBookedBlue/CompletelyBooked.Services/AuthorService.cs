@@ -113,7 +113,10 @@ namespace CompletelyBooked.Services
         }
 
 
-        public IEnumerable<AuthorBestSeller> GetAuthorBestSellers(int id)
+    
+
+
+        public IEnumerable<AuthorBestSeller> GetAuthorBestSellersId(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -139,8 +142,35 @@ namespace CompletelyBooked.Services
         }
 
 
+        public IEnumerable<AuthorBestSeller> GetAuthorBestSellersName(string name)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                ctx.Authors
+                .Where(e => name == e.Name)
+                .Select
+                (e => new AuthorBestSeller
+                {
+                    AuthorId = e.AuthorId,
+                    Name = e.Name,
+                    BestSellerCount = e.BooksWritten.Where(b => b.IsBestSeller == true).ToList().Count(),
+                    BooksWritten = e.BooksWritten.Where(b => b.IsBestSeller == true).ToList().Select(b => new BookListItem
+                    {
+                        BookId = b.BookId,
+                        AuthorId = b.Author.Name,
+                        Title = b.Title,
+                        IsBestSeller = b.IsBestSeller
+                    }).ToList(),
+                });
+                return query.ToArray();
+            }
+        }
+
+
         //Update an Author in the Database by changing Name, Birthday, Birthplace, or About
         //Based around the AuthorId
+
 
         public bool UpdateAuthor(AuthorEdit model)
         {
