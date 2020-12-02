@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CompletelyBooked.Data
 {
+    //Review Table
+    //Review Table requires a Review ID, Rating and ReviewDescription
+    //Foreign Key ties a review to a book 
     public class Review
     {
         [Key]

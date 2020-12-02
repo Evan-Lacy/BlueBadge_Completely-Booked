@@ -7,7 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CompletelyBooked.Data
-{ 
+{
+    //Publisher Table
+    //A publisher object requires a PublisherID and a Name
+    //List contains a list of books published 
     public class Publisher
     {
         [Key]

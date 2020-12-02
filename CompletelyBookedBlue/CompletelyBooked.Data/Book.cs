@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CompletelyBooked.Data
 {
+    //Book Table
+    //A book object requires a BookID, a Title, a Group, a Genre, a Description, A Publisher ID and an Author ID
+    //Foreign Key -- Publisher ties a book to a publisher; author ties a book to an author
     public class Book
     {
         [Key]

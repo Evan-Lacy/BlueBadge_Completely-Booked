@@ -10,6 +10,7 @@ namespace CompletelyBooked.Services
 {
     public class PublisherService
     {
+      
         public bool CreatePublisher(PublisherCreate model)
         {
             var entity = new Publisher()
@@ -55,6 +56,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to get a list of publishers 
         public IEnumerable<PublisherListItem> GetPublishers()
         {           
             using (var ctx = new ApplicationDbContext())
@@ -75,6 +77,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to update a publisher 
         public bool UpdatePublisher(PublisherEdit model)
         {
             using(var ctx = new ApplicationDbContext())
@@ -89,6 +92,8 @@ namespace CompletelyBooked.Services
             }
         }
 
+
+        //method to delete a publisher; will delete books 
         public bool DeletePublisher(string name)
         {
             using (var ctx = new ApplicationDbContext())

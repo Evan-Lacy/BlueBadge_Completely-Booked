@@ -11,6 +11,7 @@ namespace CompletelyBooked.Services
     public class BookService
     {
 
+        //method to create a book 
         public bool CreateBook(BookCreate model)
         {
             var entity = new Book()
@@ -32,6 +33,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to get a list of books 
         public IEnumerable<BookListItem> GetBooks()
         {
             using (var ctx = new ApplicationDbContext())
@@ -53,6 +55,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to get a list of best sellers 
         public IEnumerable<BookBestSeller> GetBestSellers()
         {
             using (var ctx = new ApplicationDbContext())
@@ -75,6 +78,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to get books by Book ID
         public BookDetail GetBookById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -105,6 +109,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to get a book by Title 
         public BookDetail GetBookByTitle(string title)
         {
             using (var ctx = new ApplicationDbContext())
@@ -135,6 +140,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to get books by author 
         public IEnumerable<BookListItem> GetBooksByAuthor(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -157,6 +163,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to get books by genre
         public IEnumerable<BookListItem> GetBooksByGenre(Genre genre)
         {
             using (var ctx = new ApplicationDbContext())
@@ -179,6 +186,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to get books by book ISBN
         public BookDetail GetBookByISBN(string isbn)
         {
             using (var ctx = new ApplicationDbContext())
@@ -209,6 +217,7 @@ namespace CompletelyBooked.Services
             }
         }
 
+        //method to update a book 
         public bool UpdateBook(BookEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -232,7 +241,7 @@ namespace CompletelyBooked.Services
             }
         }
 
-
+        //method to delete a book 
         public bool DeleteBook(int bookId)
         {
             using (var ctx = new ApplicationDbContext())

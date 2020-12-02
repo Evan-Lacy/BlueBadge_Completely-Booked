@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CompletelyBooked.Models
 {
+    //BookCreate - 
+    //This Model Class is for creating a new instance of Book inside the Completely Booked
+    //Database, including giving the object a Name, Birthday, Birthplace, and a description. 
     public class BookCreate
     {
         [Required]

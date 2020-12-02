@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace CompletelyBooked.Models
 {
+    //BookDetail - 
+    //This Model Class is for displaying all of the details of a single Book
     public class BookDetail
     {
         public int BookId { get; set; }       
