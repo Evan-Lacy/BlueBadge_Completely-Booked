@@ -15,8 +15,10 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 ## Screenshots 
 
 ![image](https://user-images.githubusercontent.com/72028079/99829172-efb1ea00-2b29-11eb-8d15-e0fe3d79a31f.png)
+[ERD via LucidChart](https://lucid.app/lucidchart/invitations/accept/76b26b21-4815-45a5-8a1c-fb0023942443)
 
 ![image](https://user-images.githubusercontent.com/72028079/99829393-40294780-2b2a-11eb-8078-1639ad330b9a.png)
+[Tickets via Trello](https://trello.com/b/lL78YX0W/grumpy-tickets)
 
 ## API Endpoints 
 
