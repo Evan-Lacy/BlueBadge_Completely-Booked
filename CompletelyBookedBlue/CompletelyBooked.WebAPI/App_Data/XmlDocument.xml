@@ -528,16 +528,23 @@
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BestSellersController.Get(System.Int32)">
             <summary>
-            This is to get a list of Best Sellers by ID
+            This is to get a list of Best Sellers by Author ID
             </summary>
-            <param name="id">This is to get a within the Completely Booked Database using the Book ID</param>
+            <param name="id">This is to get a Best Seller List within the Completely Booked Database using the Author ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BestSellersController.Get(System.String)">
+            <summary>
+            This is to get a list of Best Sellers by Author Name
+            </summary>
+            <param name="name">This is to get a Best Seller List within the Completely Booked Database using the Author Name</param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.Get">
             <summary>
             This is to get a list of all books
             </summary>
-            <returns></returns>
+            <returns></returns>       
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetById(System.Int32)">
             <summary>
