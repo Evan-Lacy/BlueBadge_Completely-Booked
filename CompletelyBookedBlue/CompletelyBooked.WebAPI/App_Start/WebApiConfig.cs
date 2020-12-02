@@ -23,14 +23,9 @@ namespace CompletelyBooked.WebAPI
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { action="default", id = RouteParameter.Optional }
-            );
-
-            config.Routes.MapHttpRoute(
-                name: "BestSeller",
-                routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+         
         }
     }
 }
