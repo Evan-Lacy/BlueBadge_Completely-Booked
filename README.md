@@ -6,6 +6,7 @@ For the Blue Badge Group API Project, the goal was to build a .NET Framework API
 ## Table of contents
 * [General Info](#general-Info)
 * [Screenshots](#screenshots)
+* [API Endpoints](#api-endpoints)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Status](#status)
