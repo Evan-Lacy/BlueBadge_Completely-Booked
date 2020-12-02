@@ -3,7 +3,7 @@ namespace CompletelyBooked.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialMigration2 : DbMigration
+    public partial class firstMigration : DbMigration
     {
         public override void Up()
         {

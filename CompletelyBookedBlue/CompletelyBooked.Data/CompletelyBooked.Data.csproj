@@ -87,13 +87,9 @@
     <Compile Include="Author.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202012012148004_initialMigration2.cs" />
-    <Compile Include="Migrations\202012012148004_initialMigration2.Designer.cs">
-      <DependentUpon>202012012148004_initialMigration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012012207597_Authorstringissue.cs" />
-    <Compile Include="Migrations\202012012207597_Authorstringissue.Designer.cs">
-      <DependentUpon>202012012207597_Authorstringissue.cs</DependentUpon>
+    <Compile Include="Migrations\202012021550348_firstMigration.cs" />
+    <Compile Include="Migrations\202012021550348_firstMigration.Designer.cs">
+      <DependentUpon>202012021550348_firstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,11 +101,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012012148004_initialMigration2.resx">
-      <DependentUpon>202012012148004_initialMigration2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012012207597_Authorstringissue.resx">
-      <DependentUpon>202012012207597_Authorstringissue.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012021550348_firstMigration.resx">
+      <DependentUpon>202012021550348_firstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

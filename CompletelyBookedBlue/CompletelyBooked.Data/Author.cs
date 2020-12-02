@@ -19,6 +19,14 @@ namespace CompletelyBooked.Data
         [Required]
         public string About { get; set; }
         public virtual List<Book> BooksWritten { get; set; } = new List<Book>();
+        public int BestSellerCount
+        {
+            get
+            {
+                int bestSellerCount = BooksWritten.Where(e => e.IsBestSeller == true).Count();
+                return bestSellerCount;
+            }
+        }
 
     }
 
