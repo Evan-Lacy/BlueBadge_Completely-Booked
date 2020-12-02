@@ -3,25 +3,65 @@ namespace CompletelyBooked.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class firstMigration : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Author",
+                c => new
+                    {
+                        AuthorId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Birthday = c.String(nullable: false),
+                        Birthplace = c.String(nullable: false),
+                        About = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.AuthorId);
+            
             CreateTable(
                 "dbo.Book",
                 c => new
                     {
                         BookId = c.Int(nullable: false, identity: true),
                         Title = c.String(nullable: false),
-                        Author = c.String(nullable: false),
                         Group = c.Int(nullable: false),
                         Genre = c.Int(nullable: false),
                         Description = c.String(nullable: false),
-                        Publisher = c.String(nullable: false),
                         IsBestSeller = c.Boolean(nullable: false),
                         ISBN = c.String(),
+                        PublisherId = c.Int(nullable: false),
+                        AuthorId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.BookId);
+                .PrimaryKey(t => t.BookId)
+                .ForeignKey("dbo.Author", t => t.AuthorId, cascadeDelete: true)
+                .ForeignKey("dbo.Publisher", t => t.PublisherId, cascadeDelete: true)
+                .Index(t => t.PublisherId)
+                .Index(t => t.AuthorId);
+            
+            CreateTable(
+                "dbo.Publisher",
+                c => new
+                    {
+                        PublisherId = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        Location = c.String(),
+                        YearFounded = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.PublisherId);
+            
+            CreateTable(
+                "dbo.Review",
+                c => new
+                    {
+                        ReviewId = c.Int(nullable: false, identity: true),
+                        Rating = c.Int(nullable: false),
+                        ReviewDescription = c.String(nullable: false),
+                        BookId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ReviewId)
+                .ForeignKey("dbo.Book", t => t.BookId, cascadeDelete: true)
+                .Index(t => t.BookId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -101,16 +141,25 @@ namespace CompletelyBooked.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Review", "BookId", "dbo.Book");
+            DropForeignKey("dbo.Book", "PublisherId", "dbo.Publisher");
+            DropForeignKey("dbo.Book", "AuthorId", "dbo.Author");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Review", new[] { "BookId" });
+            DropIndex("dbo.Book", new[] { "AuthorId" });
+            DropIndex("dbo.Book", new[] { "PublisherId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Review");
+            DropTable("dbo.Publisher");
             DropTable("dbo.Book");
+            DropTable("dbo.Author");
         }
     }
 }

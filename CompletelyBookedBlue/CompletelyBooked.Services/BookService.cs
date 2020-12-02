@@ -10,19 +10,13 @@ namespace CompletelyBooked.Services
 {
     public class BookService
     {
-        //private readonly Guid _userId;
-
-        //public BookService(Guid userId)
-        //{
-           // _userId = userId;
-        //}
 
         public bool CreateBook(BookCreate model)
         {
             var entity = new Book()
             {
                 Title = model.Title,
-                Author = model.Author,
+                AuthorId = model.AuthorId,
                 PublisherId = model.PublisherId,
                 Group = model.Group,
                 Genre = model.Genre,
@@ -51,7 +45,30 @@ namespace CompletelyBooked.Services
                                 {
                                     BookId = e.BookId,
                                     Title = e.Title,
-                                    Author = e.Author
+                                    AuthorId = e.Author.Name,
+                                    IsBestSeller = e.IsBestSeller
+                                }
+                                );
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<BookBestSeller> GetBestSellers()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Books
+                        .Where(e => e.IsBestSeller == true)
+                        .Select(
+                            e =>
+                                new BookBestSeller
+                                {
+                                    BookId = e.BookId,
+                                    Title = e.Title,
+                                    AuthorId = e.Author.Name,                                                            
+                                    
                                 }
                                 );
                 return query.ToArray();
@@ -71,14 +88,19 @@ namespace CompletelyBooked.Services
                     {
                         BookId = entity.BookId,
                         Title = entity.Title,
-                        Author = entity.Author,
+                        Author = entity.Author.Name,
                         BookPublisher = entity.Publisher.Name,
                         Group = entity.Group.ToString(),
                         Genre = entity.Genre.ToString(),
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
                         ISBN = entity.ISBN,
-                        Reviews = entity.Reviews
+                        Reviews = entity.Reviews.Select(e => new ReviewListItem
+                        {
+                            ReviewId = e.ReviewId,
+                            Rating = e.Rating,
+                            ReviewDescription = e.ReviewDescription
+                        }).ToList()
                     };
             }
         }
@@ -96,33 +118,39 @@ namespace CompletelyBooked.Services
                     {
                         BookId = entity.BookId,
                         Title = entity.Title,
-                        Author = entity.Author,
+                        Author = entity.Author.Name,
                         BookPublisher = entity.Publisher.Name,
                         Group = entity.Group.ToString(),
                         Genre = entity.Genre.ToString(),
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
-                        ISBN = entity.ISBN
-
+                        ISBN = entity.ISBN,
+                        Reviews = entity.Reviews.Select(e => new ReviewListItem
+                        {
+                            ReviewId = e.ReviewId,
+                            Rating = e.Rating,
+                            ReviewDescription = e.ReviewDescription
+                        }).ToList()
                     };
             }
         }
 
-        public IEnumerable<BookListItem> GetBooksByAuthor(string author)
+        public IEnumerable<BookListItem> GetBooksByAuthor(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Books
-                        .Where(e => e.Author == author)
+                        .Where(e => e.AuthorId == id)
                         .Select(
                             e =>
                                     new BookListItem
                                     {
                                         BookId = e.BookId,
                                         Title = e.Title,
-                                        Author = e.Author
+                                        AuthorId = e.Author.ToString(),
+                                        IsBestSeller = e.IsBestSeller
                                     }
                                     );
                 return query.ToArray();
@@ -143,7 +171,8 @@ namespace CompletelyBooked.Services
                                     {
                                         BookId = e.BookId,
                                         Title = e.Title,
-                                        Author = e.Author
+                                        AuthorId = e.Author.ToString(),
+                                        IsBestSeller = e.IsBestSeller
                                     }
                                     );
                 return query.ToArray();
@@ -163,14 +192,19 @@ namespace CompletelyBooked.Services
                     {
                         BookId = entity.BookId,
                         Title = entity.Title,
-                        Author = entity.Author,
+                        Author = entity.Author.ToString(),
                         BookPublisher = entity.Publisher.Name,
                         Group = entity.Group.ToString(),
                         Genre = entity.Genre.ToString(),
                         Description = entity.Description,
                         IsBestSeller = entity.IsBestSeller,
-                        ISBN = entity.ISBN
-
+                        ISBN = entity.ISBN,
+                        Reviews = entity.Reviews.Select(e => new ReviewListItem
+                        {
+                            ReviewId = e.ReviewId,
+                            Rating = e.Rating,
+                            ReviewDescription = e.ReviewDescription
+                        }).ToList()
                     };
             }
         }
@@ -185,7 +219,7 @@ namespace CompletelyBooked.Services
                         .Single(e => e.BookId == model.BookId);
 
                 entity.Title = model.Title;
-                entity.Author = model.Author;
+                entity.AuthorId = model.AuthorId;
                 entity.PublisherId = model.PublisherId;
                 entity.Group = model.Group;
                 entity.Genre = model.Genre;

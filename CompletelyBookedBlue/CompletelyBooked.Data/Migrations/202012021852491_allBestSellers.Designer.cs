@@ -7,13 +7,13 @@ namespace CompletelyBooked.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class cereal : IMigrationMetadata
+    public sealed partial class allBestSellers : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(cereal));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(allBestSellers));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011242112120_cereal"; }
+            get { return "202012021852491_allBestSellers"; }
         }
         
         string IMigrationMetadata.Source

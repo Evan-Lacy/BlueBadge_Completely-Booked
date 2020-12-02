@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CompletelyBooked.Models
 {
-    public class ReviewListItem
+    public class BookBestSeller
     {
-        public int ReviewId { get; set; }
-        public int Rating { get; set; }
-        public string ReviewDescription { get; set; }
+        public int BookId { get; set; }
+        public string Title { get; set; }
+        public string AuthorId { get; set; }      
     }
 }

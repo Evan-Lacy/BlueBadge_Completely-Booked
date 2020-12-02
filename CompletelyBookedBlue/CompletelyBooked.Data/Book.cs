@@ -14,8 +14,8 @@ namespace CompletelyBooked.Data
         public int BookId { get; set; }
         [Required]
         public string Title { get; set; }
-        [Required]
-        public string Author { get; set; }
+        //[Required]
+        //public string Author { get; set; }
         [Required]
         public Group Group { get; set; }
         [Required]
@@ -29,13 +29,16 @@ namespace CompletelyBooked.Data
         public string ISBN { get; set; }
 
         public virtual List<Review> Reviews { get; set; } = new List<Review>();
+        public virtual List<Book> BooksWritten { get; set; } = new List<Book>();
 
         //[Required]
         [ForeignKey(nameof(Publisher))]
         public int PublisherId { get; set; }
         public virtual Publisher Publisher { get; set; }
-        
 
+        [ForeignKey(nameof(Author))]
+        public int AuthorId { get; set; }
+        public virtual Author Author { get; set; }
     }
     public enum Genre
     {

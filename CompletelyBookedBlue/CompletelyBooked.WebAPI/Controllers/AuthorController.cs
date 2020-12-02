@@ -43,11 +43,13 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(author);
         }
 
+
         /// <summary>
         /// This is to request an Author by ID
         /// </summary>
         /// <param name="id">This is to get an Author within the Completely Booked Database using specific Author Id's </param>
         /// <returns></returns>
+
         public IHttpActionResult GetById(int id)
         {
             AuthorService authorService = CreateAuthorService();

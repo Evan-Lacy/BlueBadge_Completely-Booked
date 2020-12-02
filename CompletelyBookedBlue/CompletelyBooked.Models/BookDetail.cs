@@ -19,6 +19,6 @@ namespace CompletelyBooked.Models
         public bool IsBestSeller { get; set; }
         public string ISBN { get; set; }
 
-        public List<Review> Reviews { get; set; }
+        public virtual List<ReviewListItem> Reviews { get; set; }
     }
 }
