@@ -30,13 +30,6 @@ namespace CompletelyBooked.WebAPI.Controllers
             return Ok(books);
         }
 
-        public IHttpActionResult GetBestSellers()
-        {
-            BookService bookService = CreateBookService();
-            var books = bookService.GetBooks();
-            return Ok(books);
-        }
-
         /// <summary>
         /// This is to get a Book by ID
         /// </summary>
