@@ -638,7 +638,7 @@
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.ReviewController.GetReviews">
             <summary>
-            This is how to return all reviews of a specific book
+            This is how to return all reviews 
             </summary>
             <returns></returns>
         </member>
