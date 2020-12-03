@@ -47,7 +47,7 @@ namespace CompletelyBooked.Services
                                 {
                                     BookId = e.BookId,
                                     Title = e.Title,
-                                    AuthorId = e.Author.Name,
+                                    Author = e.Author.Name,
                                     IsBestSeller = e.IsBestSeller
                                 }
                                 );
@@ -70,8 +70,8 @@ namespace CompletelyBooked.Services
                                 {
                                     BookId = e.BookId,
                                     Title = e.Title,
-                                    AuthorId = e.Author.Name,                                                            
-                                    
+                                    AuthorId = e.Author.Name,
+
                                 }
                                 );
                 return query.ToArray();
@@ -155,7 +155,29 @@ namespace CompletelyBooked.Services
                                     {
                                         BookId = e.BookId,
                                         Title = e.Title,
-                                        AuthorId = e.Author.ToString(),
+                                        Author = e.Author.Name,
+                                        IsBestSeller = e.IsBestSeller
+                                    }
+                                    );
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<BookListItem> GetBooksByAuthorName(string name)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Books
+                        .Where(e => e.Author.Name == name)
+                        .Select(
+                            e =>
+                                    new BookListItem
+                                    {
+                                        BookId = e.BookId,
+                                        Title = e.Title,
+                                        Author = e.Author.Name,
                                         IsBestSeller = e.IsBestSeller
                                     }
                                     );
@@ -178,7 +200,7 @@ namespace CompletelyBooked.Services
                                     {
                                         BookId = e.BookId,
                                         Title = e.Title,
-                                        AuthorId = e.Author.ToString(),
+                                        Author = e.Author.ToString(),
                                         IsBestSeller = e.IsBestSeller
                                     }
                                     );
@@ -200,7 +222,7 @@ namespace CompletelyBooked.Services
                     {
                         BookId = entity.BookId,
                         Title = entity.Title,
-                        Author = entity.Author.ToString(),
+                        Author = entity.Author.Name,
                         BookPublisher = entity.Publisher.Name,
                         Group = entity.Group.ToString(),
                         Genre = entity.Genre.ToString(),
@@ -225,7 +247,7 @@ namespace CompletelyBooked.Services
                 var entity =
                     ctx
                         .Books
-                        .Single(e => e.BookId == model.BookId);
+                        .Single(e => e.Title == model.Title);
 
                 entity.Title = model.Title;
                 entity.AuthorId = model.AuthorId;

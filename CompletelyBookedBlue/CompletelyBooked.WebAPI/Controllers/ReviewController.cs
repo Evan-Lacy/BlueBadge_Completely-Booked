@@ -19,7 +19,7 @@ namespace CompletelyBooked.WebAPI.Controllers
         }
 
         /// <summary>
-        /// This is how to return all reviews of a specific book
+        /// This is how to return all reviews 
         /// </summary>
         /// <returns></returns>
         public IHttpActionResult GetReviews()
