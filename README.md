@@ -46,7 +46,7 @@ https://github.com/Evan-Lacy/BlueBadge_Completely-Booked.git
 
 ## Status 
 
-Currently in the final stages of the project. Working on finalizing last minute details and preparing for a 5pm deadline November 2, 2020. 
+Application is completed and fully functioning
 
 ## Contact
 Created by @evan-lacy @sedutiel and @carltgoss 
