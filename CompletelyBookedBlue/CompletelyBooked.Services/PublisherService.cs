@@ -47,7 +47,7 @@ namespace CompletelyBooked.Services
                         BooksPublished = e.BooksPublished.Select(b => new BookListItem
                         {
                             BookId = b.BookId,
-                            AuthorId = b.Author.Name,
+                            Author = b.Author.Name,
                             Title = b.Title, 
                             IsBestSeller = b.IsBestSeller
                         }).ToList()
