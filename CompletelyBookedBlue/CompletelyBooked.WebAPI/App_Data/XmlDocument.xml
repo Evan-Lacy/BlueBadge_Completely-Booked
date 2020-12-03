@@ -562,9 +562,16 @@
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByAuthor(System.Int32)">
             <summary>
-            This is to get books by Author 
+            This is to get books by Author via th AuthorId
             </summary>
             <param name="authorId">This is to get books by Author within the Completely Booked Database</param>
+            <returns></returns>
+        </member>
+        <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByAuthorName(System.String)">
+            <summary>
+            This is to get books by Author via the Author's name
+            </summary>
+            <param name="name"></param>
             <returns></returns>
         </member>
         <member name="M:CompletelyBooked.WebAPI.Controllers.BookController.GetByISBN(System.String)">
